@@ -73,12 +73,16 @@ function LandingPage({ onNavigate }: { onNavigate: (page: string, userId?: strin
         <nav className="bg-white/60 backdrop-blur-md rounded-2xl shadow-sm px-4 py-2 flex items-center gap-4 sm:gap-6 transition-all duration-300">
           
           {/* Logo */}
-          <div className="flex items-center">
+          <button
+            onClick={() => onNavigate('landing')}
+            className="flex items-center cursor-pointer hover:opacity-80 transition-opacity bg-transparent border-none p-0"
+            aria-label="Go to landing page"
+          >
             <svg className="w-8 h-8 shrink-0" viewBox="0 0 256 256" fill="currentColor">
               <path d="M 256 256 L 128 256 L 0 128 L 128 128 Z" fill="black" />
               <path d="M 256 128 L 128 128 L 0 0 L 128 0 Z" fill="black" />
             </svg>
-          </div>
+          </button>
 
           {/* Links */}
           <div className="flex items-center gap-6">

@@ -64,7 +64,13 @@ export default function FeedPage({ onNavigate }: Props) {
       {/* Top nav */}
       <header className="bg-surface border-b border-contrast-low sticky top-0 z-10 relative" style={{ boxShadow: '0px 3px 8px rgba(0,0,0,.06)' }}>
         <div className="max-w-2xl mx-auto px-fluid-md py-static-sm flex items-center justify-between">
-          <PHeading size="medium" tag="h1">Mini Social Media App</PHeading>
+          <button
+            onClick={() => onNavigate('landing')}
+            className="text-left cursor-pointer hover:opacity-80 transition-opacity bg-transparent border-none p-0"
+            aria-label="Go to landing page"
+          >
+            <PHeading size="medium" tag="h1">Mini Social Media App</PHeading>
+          </button>
           
           {/* Desktop nav */}
           <div className="hidden sm:flex items-center gap-static-sm">
