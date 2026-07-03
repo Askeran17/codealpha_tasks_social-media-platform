@@ -10,13 +10,16 @@ RUN npm run build
 FROM node:20-alpine AS runner
 WORKDIR /app
 
-# Copy server package configuration and install production dependencies
+# Copy server package configuration and install dependencies (including devDependencies for tsc)
 COPY server/package*.json ./server/
-RUN npm --prefix server ci --only=production
+RUN npm --prefix server ci
 
 # Copy server source code and compile
 COPY server/ ./server/
 RUN npm --prefix server run build
+
+# Prune development dependencies to keep the container size small
+RUN npm --prefix server prune --production
 
 # Copy frontend static build assets from Stage 1
 COPY --from=frontend-builder /app/dist ./dist
