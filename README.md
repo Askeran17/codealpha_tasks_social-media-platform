@@ -36,6 +36,7 @@ Below is an animation demonstrating the user journey: registering a new user, ac
 - **Posts & Comments**: Create and delete posts, like posts, and engage in threaded conversations with a real-time comment section.
 - **Like & Follow System**: Toggling likes and following/unfollowing profiles with immediate UI feedback.
 - **Mobile-Responsive Design**: Equipped with a premium hamburger menu dropdown for seamless mobile navigation without layout cluttering.
+- **Cinematic Background**: Features a premium, immersive looping video background that elevates the visual aesthetics of the platform.
 
 ---
 
