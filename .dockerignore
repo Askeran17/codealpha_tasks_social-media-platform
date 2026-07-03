@@ -2,10 +2,22 @@ node_modules
 dist
 server/node_modules
 server/dist
+# Secrets and environment files
+.env
+.env.local
+.env.*
+*.env
+**/.env
+server/.env
+
+# Databases
+*.sqlite
+*.sqlite3
+*.db
 server/database.sqlite
+
+# Logs and Git
 .git
 .github
-.env
-server/.env
 *.log
 npm-debug.log*
