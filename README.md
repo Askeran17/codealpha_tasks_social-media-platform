@@ -10,6 +10,23 @@ Below is an animation demonstrating the user journey: registering a new user, ac
 
 ---
 
+## 🖼️ Screenshots
+
+### Desktop Views
+
+**Landing Page / Authentication**
+![Landing Page](./media/landing.png)
+
+**Feed / Timeline**
+![Feed Page](./media/feed.png)
+
+### Mobile View
+
+**Responsive Navigation (Mobile Burger Menu)**
+![Mobile Menu](./media/mobile_menu.png)
+
+---
+
 ## ✨ Features
 
 - **User Profiles**: Secure registration, login, and token-based authentication (JWT). Users can customize their biographies and track follower/following counts.
