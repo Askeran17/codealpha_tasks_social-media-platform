@@ -19,7 +19,7 @@ COPY server/ ./server/
 RUN npm --prefix server run build
 
 # Prune development dependencies to keep the container size small
-RUN npm --prefix server prune --production
+RUN npm --prefix server prune --omit=dev
 
 # Copy frontend static build assets from Stage 1
 COPY --from=frontend-builder /app/dist ./dist
