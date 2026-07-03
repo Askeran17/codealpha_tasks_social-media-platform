@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-default>Mini Social Media App</title>
+    <script>
+      // Override default Porsche favicon injection dynamically
+      const faviconUrl = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'><path d='M 256 256 L 128 256 L 0 128 L 128 128 Z' fill='black' /><path d='M 256 128 L 128 128 L 0 0 L 128 0 Z' fill='black' /></svg>";
+      const setFavicon = () => {
+        const links = document.querySelectorAll("link[rel*='icon']");
+        links.forEach(l => {
+          if (l.href !== faviconUrl) {
+            l.parentNode.removeChild(l);
+          }
+        });
+        if (!document.querySelector(`link[href="${faviconUrl}"]`)) {
+          const link = document.createElement('link');
+          link.rel = 'icon';
+          link.type = 'image/svg+xml';
+          link.href = faviconUrl;
+          document.head.appendChild(link);
+        }
+      };
+      setFavicon();
+      new MutationObserver(setFavicon).observe(document.head, { childList: true, subtree: true });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
