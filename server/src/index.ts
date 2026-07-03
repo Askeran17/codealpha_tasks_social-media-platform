@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { v4 as uuidv4 } from 'uuid';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { initDb, getDb } from './db.js';
 import { authenticateToken, type AuthenticatedRequest } from './middleware/auth.js';
 
@@ -469,6 +471,21 @@ app.delete('/api/comments/:id', authenticateToken, async (req: AuthenticatedRequ
   } catch (err: any) {
     return res.status(500).json({ error: err.message });
   }
+});
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve static assets in production
+const distPath = path.join(__dirname, '../../dist');
+app.use(express.static(distPath));
+
+// Catch-all route to serve the React SPA frontend for non-API routes
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api')) {
+    return next();
+  }
+  res.sendFile(path.join(distPath, 'index.html'));
 });
 
 // Initialize database and start server

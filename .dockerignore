@@ -1,0 +1,11 @@
+node_modules
+dist
+server/node_modules
+server/dist
+server/database.sqlite
+.git
+.github
+.env
+server/.env
+*.log
+npm-debug.log*
