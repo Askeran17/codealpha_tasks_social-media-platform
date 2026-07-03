@@ -1,8 +1,8 @@
 # Mini Social Media App
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://mini-social-media-app-faub.onrender.com/)
+> 🔗 **Live Demo**: You can access the live application here: [mini-social-media-app-faub.onrender.com](https://mini-social-media-app-faub.onrender.com/) [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://mini-social-media-app-faub.onrender.com/)
 
-A minimal, elegant, and distraction-free social sanctuary designed for genuine communication. The application features a clean, responsive layout built with the **Porsche Design System** and **Tailwind CSS v4**, supported by a robust Express backend.
+A minimal, elegant, and distraction-free social sanctuary designed for genuine communication. The application features a clean, responsive layout built with the **Porsche Design System** and **Tailwind CSS v4**, supported by a robust Express backend. The entire application is containerized using a multi-stage **Docker** build for seamless mono-service deployment on **Render**.
 
 ## 📱 Walkthrough Demo
 
@@ -12,7 +12,7 @@ Below is an animation demonstrating the user journey: registering a new user, ac
 
 ---
 
-## 🖼️ Screenshots
+## 📸 Screenshots
 
 ### Desktop Views
 
