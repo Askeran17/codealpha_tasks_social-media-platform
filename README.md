@@ -56,7 +56,7 @@ Below is an animation demonstrating the user journey: registering a new user, ac
 
 ### Database (Hybrid Model)
 - **Development**: Local **SQLite** database (`database.sqlite`) for zero-configuration, offline development.
-- **Production**: Cloud **PostgreSQL** database (via `pg` Connection Pool with SSL support) for scalable, secure deployments.
+- **Production**: Cloud **PostgreSQL** database hosted on **[Neon](https://neon.tech)** (via `pg` Connection Pool with SSL support) for scalable, serverless deployments.
 
 ---
 
@@ -131,10 +131,10 @@ npm --prefix server test
 
 ## ☁️ Deployment Guidelines (Render)
 
-### 1. PostgreSQL Database
-1. Go to **Render** and create a new **PostgreSQL Database** (Free tier).
-2. Copy the **Internal Database URL** for production use.
-3. (Optional) Copy the **External Database URL** and place it in your local `server/.env` if you wish to connect your local environment to the cloud database.
+### 1. PostgreSQL Database (Neon)
+1. Go to **[Neon](https://neon.tech)** and create a new project/database (Free tier).
+2. Copy the **Connection String** it gives you — this is your `DATABASE_URL` for production use.
+3. (Optional) Place that same connection string in your local `server/.env` if you wish to connect your local environment to the cloud database.
 
 ### 2. Express Backend (Web Service)
 1. Create a new **Web Service** on Render and connect it to your GitHub repository.
