@@ -71,10 +71,10 @@ export async function initDb() {
     await pool.query(schemaQuery);
     console.log('PostgreSQL database connected and initialized successfully.');
   } else {
-    // Fallback to SQLite (Local Development)
+    // Fallback to SQLite (Local Development / Tests)
     isPostgres = false;
     sqliteDb = await open({
-      filename: path.join(__dirname, '../database.sqlite'),
+      filename: process.env.NODE_ENV === 'test' ? ':memory:' : path.join(__dirname, '../database.sqlite'),
       driver: sqlite3.Database
     });
 

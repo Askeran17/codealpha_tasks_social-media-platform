@@ -107,6 +107,28 @@ npm run dev
 
 ---
 
+## 🧪 Testing
+
+The project has automated test suites for both the frontend and the backend.
+
+### Frontend (Vitest + React Testing Library)
+
+Covers the API client (`src/lib/api.ts`), the auth session logic (`src/contexts/AuthContext.tsx`), and the `PostCard` component (rendering and the like interaction).
+
+```bash
+npm test
+```
+
+### Backend (Vitest + Supertest)
+
+Covers the Express API end-to-end (registration, login, `/auth/me`, posts, likes, comments, follow/unfollow, profiles) against an in-memory SQLite database, so it never touches your local `database.sqlite`.
+
+```bash
+npm --prefix server test
+```
+
+---
+
 ## ☁️ Deployment Guidelines (Render)
 
 ### 1. PostgreSQL Database
